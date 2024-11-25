@@ -1,0 +1,38 @@
+<%- include('header') %>
+<%- include('navbar') %>
+
+<div class="container">
+    <div class="my-form px-3 py-5">
+        <div class="logo-container">
+            <i class="bi bi-twitter"></i>
+        </div>
+        <h2 class="text-center mb-5">Sign up</h2>
+
+        <% if (typeof error !== 'undefined') { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+
+        <form method="POST" action="/register" autocomplete="off">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-at"></i></span>
+                <input type="email" name="email" class="form-control custom-input" placeholder="Email address" aria-label="Email address"
+                    aria-describedby="addon-wrapping" required>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-fill"></i></span>
+                <input type="text" name="username" class="form-control custom-input" placeholder="Username" aria-label="Username"
+                    aria-describedby="addon-wrapping" required>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
+                <input type="password" name="password" class="form-control custom-input" placeholder="Password"
+                    aria-label="Password" aria-describedby="addon-wrapping" minlength="8" required>
+            </div>
+            <button type="submit" class="btn my-btn mt-5 px-5">Sign up</button>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') %>

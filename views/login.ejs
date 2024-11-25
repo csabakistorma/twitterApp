@@ -1,0 +1,43 @@
+<%- include('header') %>
+<%- include('navbar') %>
+
+<div class="container">
+    <div class="my-form px-3 py-5">
+        <div class="logo-container">
+            <i class="bi bi-twitter"></i>
+        </div>
+        <h2 class="text-center mb-5">Login</h2>
+       
+        <% if (typeof error !== 'undefined') { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+
+        <% if (typeof completeReset !== 'undefined') { %>
+        <div class="alert alert-success" role="alert">
+            <%= completeReset %>
+        </div>
+        <% } %>
+
+        <form method="POST" action="/login" autocomplete="off">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-fill"></i></span>
+                <input type="text" class="form-control custom-input" name="username" placeholder="Username" aria-label="Username"
+                    aria-describedby="addon-wrapping" required>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock-fill"></i></span>
+                <input type="password" class="form-control custom-input" name="password" placeholder="Password"
+                    aria-label="Password" aria-describedby="addon-wrapping" required>
+            </div>
+            <button type="submit" class="btn my-btn mt-5 px-5">Login</button>
+            <div class="forgot-password mt-5">
+                <a href="/forgotpw">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<%- include('footer') %>

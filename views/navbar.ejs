@@ -1,0 +1,40 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid px-2">
+        <a class="navbar-brand" href="/">
+            <i class="bi bi-twitter"></i>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-custom w-100">
+                <div id="navbarCenter">
+                    <form class="d-flex" id="searchForm">
+                        <input class="form-control me-2" type="search" placeholder="Search twitter" aria-label="Search">
+                    </form>
+                </div>
+
+                <div class="d-flex navbar-login" id="authButtons">
+                    <% if (isLoggedIn) { %>
+                        <!-- Ha be van jelentkezve -->
+                        <button class="btn index-btn" id="username" onclick="window.location.href='#';">
+                            #<%= username %>
+                        </button>
+                        <button class="btn btn-outline-primary index-btn" id="logoutBtn"
+                            onclick="window.location.href='/logout';">Log out</button>
+                    <% } else { %>
+                        <!-- Ha nincs bejelentkezve -->
+                        <button class="btn btn-outline-primary me-2 index-btn" id="loginBtn"
+                            onclick="window.location.href='/login';">Login</button>
+                        <button class="btn btn-outline-primary index-btn" id="signupBtn"
+                            onclick="window.location.href='/register';">Sign Up</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

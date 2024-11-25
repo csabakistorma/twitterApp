@@ -1,0 +1,464 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+/* hibakezelés *************************************************************************************************/
+.alert {
+    text-align: center;
+}
+
+
+/* navbar *************************************************************************************************/
+/* Flexbox elrendezés a navbar-ra */
+.navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.navbar-brand i {
+    margin-left: 20px;
+    font-size: 46px;
+    background: linear-gradient(to bottom, rgb(118, 121, 255), rgb(179, 37, 238));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* A gombok színátmenet háttérrel */
+.index-btn {
+    background: linear-gradient(to bottom, rgb(118, 121, 255), rgb(179, 37, 238));
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    max-width: 200px;
+    width: 100%;
+    text-align: center;
+}
+
+.index-btn:hover,
+.index-btn:active {
+    color: white;
+}
+
+/* Felhasználó neve gombként, átlátszó */
+#username {
+    background: transparent;
+    /* Átlátszó háttér */
+    color: #333333;
+    /* Piros szöveg */
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Focus állapot a gombnál */
+.index-btn:focus,
+#username:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Jobb oldali gombok */
+#authButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Hamburger ikonra alkalmazott stílusok */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+/* Kereső középre igazítása */
+#navbarCenter {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#searchForm {
+    width: 300px;
+    max-width: 100%;
+}
+
+#searchForm input::placeholder {
+    color: rgb(190, 186, 190);
+}
+
+#searchForm input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#authButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 180px;
+}
+
+/* Mobil nézethez, a logót, keresőmezőt és gombokat egymás alá rendezzük */
+@media (max-width: 991px) {
+    .navbar-custom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #navbarCenter {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #authButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .index-btn {
+        min-width: 290px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    #searchForm {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    #signupBtn,
+    #logoutBtn {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+/* Logout gomb stílus */
+#logoutBtn {
+    background: linear-gradient(to bottom, rgb(118, 121, 255), rgb(179, 37, 238));
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Login - Sign up form formázás **************************************************************************/
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-form {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(to bottom, rgb(118, 121, 255), rgb(179, 37, 238));
+    border-radius: 10px;
+}
+
+.my-form h2 {
+    text-transform: uppercase;
+    color: rgb(255, 247, 255);
+}
+
+.my-form p {
+    color: rgb(255, 247, 255);
+}
+
+/* form logo ***********************************************************************************************/
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.logo-container i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color: #333;
+    font-size: 40px;
+}
+
+/* input mezők és gomb formázás **************************************************************************/
+.input-group {
+    width: 90%;
+    display: flex;
+    margin: auto;
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(214, 212, 214);
+    color: rgb(255, 247, 255);
+    border-radius: 0;
+    padding: 0;
+    padding-right: 15px;
+}
+
+.input-group i {
+    font-size: 20px;
+}
+
+.custom-input {
+    border: none;
+    border-bottom: 2px solid rgb(214, 212, 214);
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    padding: 10px 0;
+    background: transparent;
+    color: rgb(255, 247, 255);
+}
+
+.custom-input::placeholder {
+    color: rgb(255, 247, 255);
+    font-size: 0.9rem;
+}
+
+.custom-input:focus {
+    border-bottom: 2px solid rgb(214, 212, 214);
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.custom-input:focus-visible {
+    outline: none;
+    box-shadow: none;
+    color: rgb(255, 247, 255);
+}
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a {
+    color: rgb(214, 212, 214);
+    text-decoration: none;
+}
+
+/* Login - Sign up gomb formázás **************************************************************************/
+.my-btn {
+    background-color: rgb(255, 247, 255);
+    margin-left: 31%;
+    font-weight: bold;
+    color: #575656;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.my-btn:hover {
+    background-color: rgb(255, 247, 255);
+}
+
+.my-btn:active {
+    background-color: rgb(255, 247, 255);
+    color: #575656;
+    border: 2px solid #575656;
+}
+
+
+/* Tweets read and like *********************************************************************************/
+/* My custom container class */
+.my-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Ensure images fit the container */
+.tweet-images img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    /* Indicate that the image is clickable */
+}
+
+/* Új stílus a like gombhoz */
+.like-btn {
+    background: linear-gradient(to bottom, rgb(118, 121, 255), rgb(179, 37, 238));
+    /* linear gradient háttér */
+    border: none;
+    /* Nincs keret */
+    border-radius: 25px;
+    /* Lekerekített sarkok */
+    color: white;
+    /* Fehér szöveg */
+    padding: 8px 16px;
+    /* Belső margó a gombnak */
+    font-size: 14px;
+    /* Kisebb betűméret */
+    transition: all 0.3s ease;
+    /* Simított átmenet a hover effektushoz */
+}
+
+.like-btn:focus {
+    outline: none;
+    /* Nincs fókusz körvonal */
+}
+
+/* Tweets read and like *********************************************************************************/
+.my-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.tweet-form {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#imagePreview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.image-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.delete-btn {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+#fileLimitWarning {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.custom-file-input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#fileInput {
+    border: 1px solid #ccc;
+    /* Alapértelmezett szürke border */
+}
+
+#fileInput:focus {
+    outline: none;
+    /* Eltávolítja a fókuszáláskor megjelenő kék outline-t */
+    box-shadow: none;
+    /* Eltávolítja a fókuszáláskor megjelenő árnyékot */
+    border: 1px solid #ccc;
+    /* Alapértelmezett szürke border */
+}
+
+@media (max-width: 551px) {
+    #imagePreview {
+        justify-content: center;
+        /* Képek középre igazítása mobil nézetben */
+    }
+
+    .image-wrapper {
+        width: 100px;
+        /* Alapértelmezett kép méret */
+        height: 100px;
+    }
+
+
+
+    .custom-file-input {
+        min-width: 290px;
+    }
+
+    #tweetButton {
+        min-width: 290px;
+        margin: 10px;
+        /* Mobil nézetben szélesebb gomb */
+    }
+}
+
+@media (max-width: 575px) {
+    .image-wrapper {
+        width: 80px;
+        /* Még kisebb méretű képek mobiltelefon nézetben */
+        height: 80px;
+    }
+}
+
+/* Fix méret és karakterlimit a textarea-ra */
+#tweetText {
+    resize: none;
+    height: 100px;
+    /* Fix magasság */
+    width: 100%;
+    /* Kitöltse a rendelkezésre álló helyet */
+    border: 1px solid #ccc;
+    /* Alapértelmezett szürke border */
+}
+
+#tweetText:focus {
+    outline: none;
+    /* Eltávolítja a fókuszáláskor megjelenő világoskék outline-t */
+    border: 1px solid #ccc;
+    /* Eltávolítja a border színét is, ha nem szeretnél semmit */
+    box-shadow: none;
+    /* Elkerüli, hogy a fókuszáláskor árnyék jelenjen meg */
+}
